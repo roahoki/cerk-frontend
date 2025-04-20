@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/chat-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>Cerk</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body class="min-h-screen bg-base-100 text-base-content flex items-center justify-center p-4">
+  <div class="w-full max-w-6xl flex flex-col md:flex-row gap-4">
+
+    <!--  Mapa -->
+    <div class="order-2 md:order-1 w-full md:w-1/2 bg-base-200 p-4 rounded-lg shadow">
+      <div id="map" class="w-full h-[500px] rounded-lg"></div>
+    </div>
+
+    <!--  Auth +  Chat -->
+    <div class="order-1 md:order-2 w-full md:w-1/2 bg-base-200 p-4 rounded-lg shadow">
+      <!-- Login / Registro -->
+      <div id="auth-section">
+        <div class="flex justify-center mb-4">
+          <img src="/chat-icon.png" alt="Logo" class="w-16 h-16" />
+        </div>
+
+        <h2 class="text-lg font-bold text-center mb-2">Iniciar Sesión</h2>
+        <form id="login-form" class="space-y-2 mb-4">
+          <input type="text" id="login-username" placeholder="Usuario" class="input input-bordered w-full" />
+          <input type="password" id="login-password" placeholder="Contraseña" class="input input-bordered w-full" />
+          <button type="submit" class="btn btn-primary w-full">Ingresar</button>
+        </form>
+
+        <div class="divider">O</div>
+
+        <h2 class="text-lg font-bold text-center mb-2">Registrarse</h2>
+        <form id="register-form" class="space-y-2">
+          <input type="text" id="register-username" placeholder="Usuario nuevo" class="input input-bordered w-full" />
+          <input type="password" id="register-password" placeholder="Contraseña" class="input input-bordered w-full" />
+          <button type="submit" class="btn btn-accent w-full">Crear cuenta</button>
+        </form>
+      </div>
+
+      <!-- Chat -->
+      <div id="chat-section" class="hidden flex flex-col h-full">
+        <div class="flex justify-center mb-2">
+          <img src="/chat-icon.png" alt="Logo" class="w-16 h-16" />
+        </div>
+
+        <div id="location" class="mb-2 text-sm text-center">
+          Ubicación: Obteniendo tu ciudad...
+        </div>
+
+        <div id="messages" class="space-y-2 mb-2 overflow-y-auto max-h-[300px] p-1">
+          <!-- Mensajes aquí -->
+        </div>
+
+        <form id="form" class="flex gap-2 mt-auto">
+          <input id="input" type="text" placeholder="Escribe un mensaje..." class="input input-bordered flex-1"
+            autocomplete="off" />
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
