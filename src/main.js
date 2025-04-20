@@ -10,7 +10,7 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
   const username = document.getElementById('register-username').value.trim();
   const password = document.getElementById('register-password').value.trim();
 
-  const res = await fetch('http://localhost:3000/api/register', {
+  const res = await fetch('https://cerk-backend.onrender.com/api/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
@@ -35,7 +35,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
   const username = document.getElementById('login-username').value.trim();
   const password = document.getElementById('login-password').value.trim();
 
-  const res = await fetch('http://localhost:3000/api/login', {
+  const res = await fetch('https://cerk-backend.onrender.com/api/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password }),
@@ -53,7 +53,7 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
 });
 
 function startChat(username) {
-  const socket = io('http://localhost:3000');
+  const socket = io('https://cerk-backend.onrender.com/');
 
   const form = document.getElementById('form');
   const input = document.getElementById('input');
