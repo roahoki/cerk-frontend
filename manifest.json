@@ -1,0 +1,15 @@
+{
+    "name": "Cerk Web Application",
+    "short_name": "Cerk",
+    "theme_color": "#000000",
+    "background_color": "#FFFF00",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/chat-icon.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        }
+    ],
+    "start_url": "/"
+}
